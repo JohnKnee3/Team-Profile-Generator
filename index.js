@@ -38,3 +38,4 @@
 //10.3.3 Added 2 more tests and protypes to the Player constructor.  Discovered if I --console.log(new Player.getHealth());--  I can look at what these print in the Player.test.js.
 //10.3.4 Added 3 more tests and prototype Methods to the Player constructor.  My console log returns undefined for these because these have more going on and I don't know the syntax to look at arrays.
 //10.3.5 Added the Enemy.test.js in the __tests__ folder and added code to force the FAIL.  Then added code to the Enemy.js file to get things working.  We passed in 2 variables this time and called the Potion() method.
+//10.3.6 Added all the code to set up the Enemy stuff.  This was really just a ton of copy paste.  No new ideas here.
