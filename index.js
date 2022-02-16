@@ -31,3 +31,4 @@
 //10.1.6 Good info on constructors worth a read.  We made a function that creates an object in in Potion.js, assigns it's name to the passed in potion var, checks if it's name is "health" and if yes sets the new value line in the object to a number between 30-40 otherwise it is between 5-12.
 //10.1.7 Made a new test to pass in an empty potion object from Potion.test.js.  Then in Potion.js made an array of names and then when making the this.name checked if nothing or something was passed in and handled that for us.
 //10.2.3 Learned that "npm test" will test all files in the __test__ folder.  To pick one type "npm test Player" for expample.  Also added a test to Player.test.js that failed because Player.js has no code.
+//10.2.4 Added an empty string to the the catch --function Player(name = "") {-- so this will create "" if nothing is passed in. The rest is pretty standard just making 4 total variables in this object instead of just 2.
