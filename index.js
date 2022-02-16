@@ -36,3 +36,4 @@
 //10.2.6 Created the FAIL tests for getStats() and getInventory().  They both fail because we have not included them yet in our Player.js or Potion.js.  We will see where we write them.
 //10.2.7 Introduced Player.prototype.getStats.  This was all written in the Player.js to make the test pass.  As of write now I am now really clear on how this works but they claim they will explain this more.  Best I can tell is these look at the constructor and pull data.
 //10.3.3 Added 2 more tests and protypes to the Player constructor.  Discovered if I --console.log(new Player.getHealth());--  I can look at what these print in the Player.test.js.
+//10.3.4 Added 3 more tests and prototype Methods to the Player constructor.  My console log returns undefined for these because these have more going on and I don't know the syntax to look at arrays.
