@@ -40,3 +40,4 @@
 //10.3.5 Added the Enemy.test.js in the __tests__ folder and added code to force the FAIL.  Then added code to the Enemy.js file to get things working.  We passed in 2 variables this time and called the Potion() method.
 //10.3.6 Added all the code to set up the Enemy stuff.  This was really just a ton of copy paste.  No new ideas here.
 //10.4.3 Added opening code to Game.js to get things started.  Then went into app.js and set that up so we can really get things started using node app.js.
+//10.4.4 Added the startNewBattle prototype Method.  This picks who goes first and then uses this.player and this.currentEnemy to go get data from other methods.  Also intorduced the console.table() which is pretty amazing.
