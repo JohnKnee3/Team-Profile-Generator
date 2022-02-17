@@ -43,3 +43,4 @@
 //10.4.4 Added the startNewBattle prototype Method.  This picks who goes first and then uses this.player and this.currentEnemy to go get data from other methods.  Also intorduced the console.table() which is pretty amazing.
 //10.4.5 Added the .battle method which contained 2 list prompts that fed off of eachother and even called other methods.  Could be useful in knowing how to swtich between Manager and Engineer etc.. Come back and read.
 //10.4.6 Added the checkEndOfBattle Method.  This thing really goes nuts and has several  things that may be useful when it comes to building the objects for the challenge.  Especially like knowing when to stop.  May have to read later.
+//10.4.7 This introduces the idea of creating a file, in this case called Character.js, to handle code that is the same for multiple objects.  Could be useful in creating the Employee boxes.
