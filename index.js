@@ -1,3 +1,7 @@
+// const Employee = require("./lib/Employee");
+
+// new Employee().initializeEmployee();
+
 //Notes
 
 // Build an entire application using object-oriented programming (OOP), separating data and functionality into different constructor functions.
