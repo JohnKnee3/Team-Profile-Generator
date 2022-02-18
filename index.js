@@ -1,3 +1,47 @@
+const inquirer = require("inquirer");
+const Employee = require("./lib/Employee");
+const Manager = require("./lib/Manager");
+
+console.log(new Manager("Mira", 12, "thepups@gmail.com", 33).getRole());
+//asks questions
+const promptUser = () => {
+  return inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "What is the name of your Manager? (Required)",
+      validate: (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log("Please enter your Manager's Name!");
+          return false;
+        }
+      },
+    },
+    {
+      type: "number",
+      name: "id",
+      message: "What is your Manager's id number? (Required)",
+      validate: (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log(
+            " is not a number.  Please enter your Manager's id number!  Press up then down to clear NaN error message."
+          );
+          return false;
+        }
+      },
+    },
+  ]);
+};
+
+//the call to start the questions
+promptUser().then((answers) => {
+  console.log(answers);
+});
+
 //Notes
 
 // Build an entire application using object-oriented programming (OOP), separating data and functionality into different constructor functions.
