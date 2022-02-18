@@ -3,7 +3,7 @@ const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 
 //asks questions
-const promptUser = () => {
+const promptManager = () => {
   return inquirer.prompt([
     {
       type: "input",
@@ -66,12 +66,16 @@ const promptUser = () => {
   ]);
 };
 
+//array to hold team for now put in the global scope
+teamForceFive = [];
+
 //the call to start the questions
-promptUser().then((answers) => {
-  console.log(answers.name, answers.id, answers.email, answers.office);
-  console.log(
-    new Manager(answers.name, answers.id, answers.email, answers.office)
-  );
+promptManager().then((answers) => {
+  console.log(new Manager(answers));
+  //   console.log(answers.name, answers.id, answers.email, answers.office);
+  //   console.log(
+  //     new Manager(answers.name, answers.id, answers.email, answers.office)
+  //   );
 });
 
 //Notes
