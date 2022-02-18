@@ -2,6 +2,7 @@ const inquirer = require("inquirer");
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
+const Intern = require("./lib/Intern");
 
 //asks questions
 const promptManager = () => {
@@ -42,9 +43,7 @@ const promptManager = () => {
         if (nameInput) {
           return true;
         } else {
-          console.log(
-            " is not a number.  Please enter the Manager's email address!"
-          );
+          console.log("Please enter the Manager's email address!");
           return false;
         }
       },
@@ -67,9 +66,152 @@ const promptManager = () => {
   ]);
 };
 
+//Question to see what employee you want to add next.
 const promptQuestion = () => {
-  //   return inquirer.prompt();
-  console.log("When does this fire off?");
+  inquirer
+    .prompt({
+      type: "list",
+      message: "Would you like to add a(n)?",
+      name: "choice",
+      choices: ["Engineer", "Intern", "All Done"],
+    })
+    .then((answer) => {
+      if (answer.choice === "Engineer") {
+        promptEngineer().then((answers) => {
+          teamForceFive.push(new Engineer(answers));
+          console.log(teamForceFive);
+          promptQuestion();
+        });
+      } else if (answer.choice === "Intern") {
+        promptIntern().then((answers) => {
+          teamForceFive.push(new Intern(answers));
+          console.log(teamForceFive);
+          promptQuestion();
+        });
+      } else if (answer.choice === "All Done") {
+        console.log("You did it!!!  Go check out your generated page.");
+      }
+    });
+};
+
+//questions for the engineer
+const promptEngineer = () => {
+  return inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "What is the name of your Engineer? (Required)",
+      validate: (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log("Please enter the Engineer's Name!");
+          return false;
+        }
+      },
+    },
+    {
+      type: "number",
+      name: "id",
+      message: "What is the Engineer's id number? (Required)",
+      validate: (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log(
+            " is not a number.  Please enter the Engineer's id number!  Press up then down to clear NaN error message and try again."
+          );
+          return false;
+        }
+      },
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is the Engineer's email address? (Required)",
+      validate: (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log("Please enter the Engineer's email address!");
+          return false;
+        }
+      },
+    },
+    {
+      type: "input",
+      name: "gitHub",
+      message: "What is the Engineer's gitHub? (Required)",
+      validate: (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log("Please enter the Engineer's gitHub!");
+          return false;
+        }
+      },
+    },
+  ]);
+};
+
+//Asks the questions for the intern
+const promptIntern = () => {
+  return inquirer.prompt([
+    {
+      type: "input",
+      name: "name",
+      message: "What is the name of your Intern? (Required)",
+      validate: (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log("Please enter the Intern's Name!");
+          return false;
+        }
+      },
+    },
+    {
+      type: "number",
+      name: "id",
+      message: "What is the Intern's id number? (Required)",
+      validate: (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log(
+            " is not a number.  Please enter the Intern's id number!  Press up then down to clear NaN error message and try again."
+          );
+          return false;
+        }
+      },
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is the Intern's email address? (Required)",
+      validate: (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log("Please enter the Intern's email address!");
+          return false;
+        }
+      },
+    },
+    {
+      type: "input",
+      name: "school",
+      message: "What school did the Intern attend? (Required)",
+      validate: (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log("Please enter the Intern's school!");
+          return false;
+        }
+      },
+    },
+  ]);
 };
 
 //array to hold team for now put in the global scope
