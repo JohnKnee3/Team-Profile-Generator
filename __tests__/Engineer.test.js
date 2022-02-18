@@ -21,5 +21,3 @@ test("changes role to Engineer", () => {
 
   expect(engineer.getRole()).toBe("Engineer");
 });
-
-console.log(new Engineer("Mira", 12, "thepups@gmail.com", "pupHub"));
