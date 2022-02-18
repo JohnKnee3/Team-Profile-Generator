@@ -2,7 +2,6 @@ const inquirer = require("inquirer");
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 
-console.log(new Manager("Mira", 12, "thepups@gmail.com", 33).getRole());
 //asks questions
 const promptUser = () => {
   return inquirer.prompt([
@@ -14,7 +13,7 @@ const promptUser = () => {
         if (nameInput) {
           return true;
         } else {
-          console.log("Please enter your Manager's Name!");
+          console.log("Please enter the Manager's Name!");
           return false;
         }
       },
@@ -22,13 +21,43 @@ const promptUser = () => {
     {
       type: "number",
       name: "id",
-      message: "What is your Manager's id number? (Required)",
+      message: "What is the Manager's id number? (Required)",
       validate: (nameInput) => {
         if (nameInput) {
           return true;
         } else {
           console.log(
-            " is not a number.  Please enter your Manager's id number!  Press up then down to clear NaN error message."
+            " is not a number.  Please enter the Manager's id number!  Press up then down to clear NaN error message and try again."
+          );
+          return false;
+        }
+      },
+    },
+    {
+      type: "input",
+      name: "email",
+      message: "What is the Manager's email address? (Required)",
+      validate: (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log(
+            " is not a number.  Please enter the Manager's email address!"
+          );
+          return false;
+        }
+      },
+    },
+    {
+      type: "number",
+      name: "office",
+      message: "What is the Manager's office number? (Required)",
+      validate: (nameInput) => {
+        if (nameInput) {
+          return true;
+        } else {
+          console.log(
+            " is not a number.  Please enter the Manager's office number!  Press up then down to clear NaN error message and try again."
           );
           return false;
         }
@@ -39,7 +68,10 @@ const promptUser = () => {
 
 //the call to start the questions
 promptUser().then((answers) => {
-  console.log(answers);
+  console.log(answers.name, answers.id, answers.email, answers.office);
+  console.log(
+    new Manager(answers.name, answers.id, answers.email, answers.office)
+  );
 });
 
 //Notes
