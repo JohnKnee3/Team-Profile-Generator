@@ -19,9 +19,13 @@ test("gets employee name", () => {
 });
 
 // getId()
-
+test("gets employee id number", () => {
+  const employee = new Employee("Dave", 2);
+  expect(employee.getId()).toEqual(expect.any(Number));
+});
 // getEmail()
 
 // getRole() // Returns 'Employee'
 
 console.log(new Employee("Mira", 12, "thepups@gmail.com"));
+console.log(new Employee("Molly", 4).getId());
