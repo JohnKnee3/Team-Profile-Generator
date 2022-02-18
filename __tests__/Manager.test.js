@@ -7,5 +7,10 @@ test("managers office number", () => {
   expect(manager.officeNumber).toEqual(expect.any(Number));
 });
 // getRole() // Overridden to return 'Manager'
+test("changes role to Manager", () => {
+  const manager = new Manager("Dave", 12, "dave@yahoo.com", 37);
+
+  expect(manager.getRole()).toBe("Manager");
+});
 
 console.log(new Manager("Mira", 12, "thepups@gmail.com", 29));
