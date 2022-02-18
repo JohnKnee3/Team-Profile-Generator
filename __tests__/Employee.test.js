@@ -9,6 +9,7 @@ test("creates an employee object", () => {
   // email
   expect(employee.email).toBe("dave@yahoo.com");
 });
+
 // getName()
 test("gets employee name", () => {
   const employee = new Employee("Dave");
@@ -24,8 +25,19 @@ test("gets employee id number", () => {
   expect(employee.getId()).toEqual(expect.any(Number));
 });
 // getEmail()
+test("get employee email", () => {
+  const employee = new Employee("Dave", 3, "dave@yahoo.com");
+
+  expect(employee.getEmail()).toEqual(
+    expect.stringContaining(employee.email.toString())
+  );
+});
 
 // getRole() // Returns 'Employee'
+test("gets employee role", () => {
+  const employee = new Employee("Dave", 1, "dave@yahoo.com");
+
+  expect(employee.getRole()).toBe("Employee");
+});
 
 console.log(new Employee("Mira", 12, "thepups@gmail.com"));
-console.log(new Employee("Molly", 4).getId());
