@@ -12,5 +12,3 @@ test("changes role to Manager", () => {
 
   expect(manager.getRole()).toBe("Manager");
 });
-
-console.log(new Manager("Mira", 12, "thepups@gmail.com", 29));
