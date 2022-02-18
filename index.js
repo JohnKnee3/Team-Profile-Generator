@@ -1,6 +1,7 @@
 const inquirer = require("inquirer");
 const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
+const Engineer = require("./lib/Engineer");
 
 //asks questions
 const promptManager = () => {
@@ -66,16 +67,19 @@ const promptManager = () => {
   ]);
 };
 
+const promptQuestion = () => {
+  //   return inquirer.prompt();
+  console.log("When does this fire off?");
+};
+
 //array to hold team for now put in the global scope
 teamForceFive = [];
 
 //the call to start the questions
 promptManager().then((answers) => {
-  console.log(new Manager(answers));
-  //   console.log(answers.name, answers.id, answers.email, answers.office);
-  //   console.log(
-  //     new Manager(answers.name, answers.id, answers.email, answers.office)
-  //   );
+  teamForceFive.push(new Manager(answers));
+  console.log(teamForceFive);
+  promptQuestion();
 });
 
 //Notes
