@@ -39,5 +39,3 @@ test("gets employee role", () => {
 
   expect(employee.getRole()).toBe("Employee");
 });
-
-console.log(new Employee("Mira", 12, "thepups@gmail.com"));
