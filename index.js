@@ -4,6 +4,7 @@ const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
+const { generateMarkdown } = require("./src/generateMarkdown.js");
 
 //asks questions
 const promptManager = () => {
@@ -72,7 +73,7 @@ const promptQuestion = () => {
   inquirer
     .prompt({
       type: "list",
-      message: "Would you like to add a(n)?",
+      message: "Would you like to add an?",
       name: "choice",
       choices: ["Engineer", "Intern", "All Done"],
     })
@@ -80,16 +81,17 @@ const promptQuestion = () => {
       if (answer.choice === "Engineer") {
         promptEngineer().then((answers) => {
           teamForceFive.push(new Engineer(answers));
-          console.log(teamForceFive);
+
           promptQuestion();
         });
       } else if (answer.choice === "Intern") {
         promptIntern().then((answers) => {
           teamForceFive.push(new Intern(answers));
-          console.log(teamForceFive);
+
           promptQuestion();
         });
       } else if (answer.choice === "All Done") {
+        generateMarkdown(teamForceFive);
         console.log("You did it!!!  Go check out your generated page.");
       }
     });
