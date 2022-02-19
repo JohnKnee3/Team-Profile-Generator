@@ -1,10 +1,4 @@
 const generateEmployee = (answers) => {
-  // answers.map((employee) => {
-  //   console.log(employee.getRole());
-  // });
-
-  console.log(answers);
-  // console.table(answers);
   return `
         ${answers
           .filter(({ role }) => role === "Manager")
@@ -15,11 +9,9 @@ const generateEmployee = (answers) => {
         <div class="flex-row justify-space-between">
           <div class="col-12 mb-2 bg-dark text-light p-3">
             <h3 class="portfolio-item-title text-light">${name}</h3>
-            <h5 class="portfolio-languages">
-              ${id}
-            </h5>
-            <p>${officeNumber}</p>
-            <a href="${email}" class="btn"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
+            <p>Id Number: ${id}</p>
+            <p>Email Address: <a href="mailto:${email}">${email}</a></p>
+            <p>Office Number: ${officeNumber}</p>
           </div>
         `;
           })
@@ -34,11 +26,9 @@ const generateEmployee = (answers) => {
           <div class="flex-row justify-space-between">
             <div class="col-12 mb-2 bg-dark text-light p-3">
               <h3 class="portfolio-item-title text-light">${name}</h3>
-              <h5 class="portfolio-languages">
-                ${id}
-              </h5>
-              <p>${gitHub}</p>
-              <a href="${email}" class="btn"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
+              <p>Id Number: ${id}</p>
+              <p>Email Address: <a href="mailto:${email}">${email}</a></p>
+              <a href="https://github.com/${gitHub}" target="_blank" class="btn"><i class="fab fa-github mr-2"></i>View ${name}'s GitHub</a>
             </div>
           `;
             })
@@ -53,16 +43,14 @@ const generateEmployee = (answers) => {
             <div class="flex-row justify-space-between">
               <div class="col-12 mb-2 bg-dark text-light p-3">
                 <h3 class="portfolio-item-title text-light">${name}</h3>
-                <h5 class="portfolio-languages">
-                  ${id}
-                </h5>
+                <p>Id Number: ${id}</p>
+                <p>Email Address: <a href="mailto:${email}">${email}</a></p>
                 <p>${school}</p>
-                <a href="${email}" class="btn"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
               </div>
             `;
               })
               .join("")}
-      </div>
+      
     </section>
   `;
 };
@@ -86,7 +74,7 @@ module.exports = (templateData) => {
   <body>
     <header>
       <div class="container flex-row justify-space-between align-center py-3">
-        <h1 class="page-title text-secondary bg-dark py-2 px-3">Team</h1>
+        <h1 class="page-title text-secondary bg-dark py-2 px-3">My Team</h1>
         <nav class="flex-row">
         </nav>
       </div>
@@ -95,7 +83,7 @@ module.exports = (templateData) => {
       ${generateEmployee(templateData)}
     </main>
     <footer class="container text-center py-3">
-      <h3 class="text-dark">&copy;2020 by Johnny</h3>
+      <h3 class="text-dark">&copy;2022 by Johnny</h3>
     </footer>
   </body>
   </html>
