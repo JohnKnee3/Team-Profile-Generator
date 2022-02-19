@@ -24,7 +24,44 @@ const generateEmployee = (answers) => {
         `;
           })
           .join("")}
-          
+
+          ${answers
+            .filter(({ role }) => role === "Engineer")
+            .map(({ name, id, email, gitHub, role }) => {
+              return `
+        <section class="my-3" id="portfolio">
+          <h2 class="text-dark bg-primary p-2 display-inline-block">${role}</h2>
+          <div class="flex-row justify-space-between">
+            <div class="col-12 mb-2 bg-dark text-light p-3">
+              <h3 class="portfolio-item-title text-light">${name}</h3>
+              <h5 class="portfolio-languages">
+                ${id}
+              </h5>
+              <p>${gitHub}</p>
+              <a href="${email}" class="btn"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
+            </div>
+          `;
+            })
+            .join("")}
+
+            ${answers
+              .filter(({ role }) => role === "Intern")
+              .map(({ name, id, email, school, role }) => {
+                return `
+          <section class="my-3" id="portfolio">
+            <h2 class="text-dark bg-primary p-2 display-inline-block">${role}</h2>
+            <div class="flex-row justify-space-between">
+              <div class="col-12 mb-2 bg-dark text-light p-3">
+                <h3 class="portfolio-item-title text-light">${name}</h3>
+                <h5 class="portfolio-languages">
+                  ${id}
+                </h5>
+                <p>${school}</p>
+                <a href="${email}" class="btn"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
+              </div>
+            `;
+              })
+              .join("")}
       </div>
     </section>
   `;
