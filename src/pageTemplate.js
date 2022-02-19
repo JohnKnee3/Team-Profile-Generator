@@ -1,3 +1,4 @@
+//generates the Mangager, Engineer and Intern sections
 const generateEmployee = (answers) => {
   return `
         ${answers
