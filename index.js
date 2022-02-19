@@ -4,7 +4,8 @@ const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
-const { generateMarkdown } = require("./src/generateMarkdown.js");
+const pageTemplate = require("./src/pageTemplate.js");
+const { writeFile, copyFile } = require("./utils/generate-site");
 
 //asks questions
 const promptManager = () => {
@@ -91,7 +92,8 @@ const promptQuestion = () => {
           promptQuestion();
         });
       } else if (answer.choice === "All Done") {
-        generateMarkdown(teamForceFive);
+        pageTemplate(teamForceFive);
+
         console.log("You did it!!!  Go check out your generated page.");
       }
     });
@@ -223,7 +225,6 @@ teamForceFive = [];
 //the call to start the questions
 promptManager().then((answers) => {
   teamForceFive.push(new Manager(answers));
-  console.log(teamForceFive);
   promptQuestion();
 });
 
