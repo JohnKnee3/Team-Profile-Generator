@@ -5,14 +5,15 @@ const generateEmployee = (answers) => {
           .map(({ name, id, email, officeNumber, role }) => {
             return `
       <section class="my-3" id="portfolio">
-        <h2 class="text-dark bg-primary p-2 display-inline-block">${role}</h2>
         <div class="flex-row justify-space-between">
-          <div class="col-12 mb-2 bg-dark text-light p-3">
+          <h2 class="text-dark bg-primary p-2 display-inline-block">${role}</h2>
+          <div class="col-12  mb-2 bg-dark text-light p-3">
             <h3 class="portfolio-item-title text-light">${name}</h3>
             <p>Id Number: ${id}</p>
             <p>Email Address: <a href="mailto:${email}">${email}</a></p>
             <p>Office Number: ${officeNumber}</p>
           </div>
+        </div>
         `;
           })
           .join("")}
@@ -22,14 +23,15 @@ const generateEmployee = (answers) => {
             .map(({ name, id, email, gitHub, role }) => {
               return `
         <section class="my-3" id="portfolio">
-          <h2 class="text-dark bg-primary p-2 display-inline-block">${role}</h2>
           <div class="flex-row justify-space-between">
-            <div class="col-12 mb-2 bg-dark text-light p-3">
+            <h2 class="text-dark bg-primary p-2 display-inline-block">${role}</h2>
+            <div class="col-12  mb-2 bg-dark text-light p-3">
               <h3 class="portfolio-item-title text-light">${name}</h3>
               <p>Id Number: ${id}</p>
               <p>Email Address: <a href="mailto:${email}">${email}</a></p>
               <a href="https://github.com/${gitHub}" target="_blank" class="btn"><i class="fab fa-github mr-2"></i>View ${name}'s GitHub</a>
             </div>
+          </div>
           `;
             })
             .join("")}
@@ -39,14 +41,15 @@ const generateEmployee = (answers) => {
               .map(({ name, id, email, school, role }) => {
                 return `
           <section class="my-3" id="portfolio">
-            <h2 class="text-dark bg-primary p-2 display-inline-block">${role}</h2>
             <div class="flex-row justify-space-between">
-              <div class="col-12 mb-2 bg-dark text-light p-3">
+              <h2 class="text-dark bg-primary p-2 display-inline-block">${role}</h2>
+              <div class="col-12  mb-2 bg-dark text-light p-3">
                 <h3 class="portfolio-item-title text-light">${name}</h3>
                 <p>Id Number: ${id}</p>
                 <p>Email Address: <a href="mailto:${email}">${email}</a></p>
                 <p>${school}</p>
               </div>
+            </div>
             `;
               })
               .join("")}
