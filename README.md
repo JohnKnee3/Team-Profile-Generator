@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [Installation](#installation)
+- [Tests](#tests)
 - [Questions](#questions)
 - [What I Learned](#what-i-learned)
 
@@ -15,6 +16,10 @@ This is a program that will ask you questions about your coding team. You will b
 ## Installation
 
 First go into the terminal and type npm init. Then type npm install inquirer and you should be good to go. If you want to interact with the tests make sure to install jest by typing npm install --save-dev jest.
+
+## Tests
+
+Navigate to the root folder in the terminal and type node index to launch the program. If you would like to run the jest tests to make sure those work just again navigate to the root folder and type npm test. Here is a <a href="https://drive.google.com/file/d/1aeQa4ffOice_osbW_rBxk9N3s6Idng6J/view">video of the Team Profile Generator in action.</a>
 
 ## What I Learned
 
