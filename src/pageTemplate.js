@@ -1,11 +1,33 @@
-const generateManager = (answers) => {
+const generateEmployee = (answers) => {
   // answers.map((employee) => {
   //   console.log(employee.getRole());
   // });
 
   console.log(answers);
-  console.table(answers);
-  return "Mira thinks it's dinner time";
+  // console.table(answers);
+  return `
+        ${answers
+          .filter(({ role }) => role === "Manager")
+          .map(({ name, id, email, officeNumber, role }) => {
+            return `
+      <section class="my-3" id="portfolio">
+        <h2 class="text-dark bg-primary p-2 display-inline-block">${role}</h2>
+        <div class="flex-row justify-space-between">
+          <div class="col-12 mb-2 bg-dark text-light p-3">
+            <h3 class="portfolio-item-title text-light">${name}</h3>
+            <h5 class="portfolio-languages">
+              ${id}
+            </h5>
+            <p>${officeNumber}</p>
+            <a href="${email}" class="btn"><i class="fab fa-github mr-2"></i>View Project on GitHub</a>
+          </div>
+        `;
+          })
+          .join("")}
+          
+      </div>
+    </section>
+  `;
 };
 
 // export function to generate entire page
@@ -33,7 +55,7 @@ module.exports = (templateData) => {
       </div>
     </header>
     <main class="container my-5">
-      Hey there!!${generateManager(templateData)}
+      ${generateEmployee(templateData)}
     </main>
     <footer class="container text-center py-3">
       <h3 class="text-dark">&copy;2020 by Johnny</h3>
