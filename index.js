@@ -92,7 +92,9 @@ const promptQuestion = () => {
           promptQuestion();
         });
       } else if (answer.choice === "All Done") {
-        pageTemplate(teamForceFive);
+        const HTML = pageTemplate(teamForceFive);
+        writeFile(HTML);
+        copyFile();
 
         console.log("You did it!!!  Go check out your generated page.");
       }

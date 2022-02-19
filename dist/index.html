@@ -1,11 +1,4 @@
-const generateManager = (answers) => {
-  console.log(answers);
-  return "Mira thinks it's dinner time";
-};
 
-// export function to generate entire page
-module.exports = (templateData) => {
-  return `
   <!DOCTYPE html>
   <html lang="en">
 
@@ -28,12 +21,11 @@ module.exports = (templateData) => {
       </div>
     </header>
     <main class="container my-5">
-      Hey there!!${generateManager(templateData)}
+      Hey there!!Mira thinks it's dinner time
     </main>
     <footer class="container text-center py-3">
       <h3 class="text-dark">&copy;2020 by Johnny</h3>
     </footer>
   </body>
   </html>
-  `;
-};
+  
