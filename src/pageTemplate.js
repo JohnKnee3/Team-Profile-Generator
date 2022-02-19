@@ -1,5 +1,10 @@
 const generateManager = (answers) => {
+  // answers.map((employee) => {
+  //   console.log(employee.getRole());
+  // });
+
   console.log(answers);
+  console.table(answers);
   return "Mira thinks it's dinner time";
 };
 
