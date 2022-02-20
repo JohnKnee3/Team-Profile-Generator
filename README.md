@@ -19,7 +19,7 @@ First go into the terminal and type npm init. Then type npm install inquirer and
 
 ## Tests
 
-Navigate to the root folder in the terminal and type node index to launch the program. If you would like to run the jest tests to make sure those work just again navigate to the root folder and type npm test. Here is a <a href="https://drive.google.com/file/d/1aeQa4ffOice_osbW_rBxk9N3s6Idng6J/view">video of the Team Profile Generator in action.</a>
+Navigate to the root folder in the terminal and type node index to launch the program. If you would like to run the jest tests to make sure those work just again navigate to the root folder and type npm test. Here is a <a href="https://drive.google.com/file/d/1dVsQsve8_c5WAiV1d_xW627EP6FENzfY/view">video of the Team Profile Generator in action.</a>
 
 ## What I Learned
 
