@@ -48,7 +48,7 @@ const generateEmployee = (answers) => {
                 <h3 class="portfolio-item-title text-light">${name}</h3>
                 <p>Id Number: ${id}</p>
                 <p>Email Address: <a href="mailto:${email}">${email}</a></p>
-                <p>${school}</p>
+                <p>School: ${school}</p>
               </div>
             </div>
             `;
